@@ -10,3 +10,10 @@ prompt$> make install
 ```
 
 Installs as `~/bin/brew_upgrade.sh`
+
+### Usage
+* The most effective way to leverage this script is through a LaunchAgent
+* You can create a LaunchAgent with:
+```
+prompt$> make launchagent
+```
