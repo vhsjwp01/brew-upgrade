@@ -13,7 +13,7 @@ Installs as `~/bin/brew_upgrade.sh`
 
 ### Usage
 * The most effective way to leverage this script is through a LaunchAgent
-* You can interactively create a LaunchAgent with:
+  * You can interactively create a LaunchAgent with:
 ```
 prompt$> make launchagent
 ```
@@ -21,5 +21,5 @@ prompt$> make launchagent
 ```
 prompt$> ~/bin/brew_upgrade.sh
 ```
-* A log of it's operations will be created here: `~/brew.log`
-  * the log file is over written each time the script is executed
+  * A log of it's operations will be created here: `~/brew.log`
+    * the log file is over written each time the script is executed
