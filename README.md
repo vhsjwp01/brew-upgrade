@@ -21,5 +21,5 @@ prompt$> make launchagent
 ```
 prompt$> ~/bin/brew_upgrade.sh
 ```
-  * A log of it's operations will be created here: `~/brew.log`
-    * the log file is over written each time the script is executed
+* A log of it's operations will be created here: `~/brew.log`
+  * the log file is over written each time the script is executed
