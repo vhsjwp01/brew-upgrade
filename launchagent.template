@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>brew-upgrade</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>{{HOME}}/bin/brew_upgrade.sh</string>
+            <string>{{USER}}</string>
+        </array>
+        <key>StartCalendarInterval</key>
+        <dict>
+            <key>Hour</key>
+            <integer>{{HOUR}}</integer>
+            <key>Minute</key>
+            <integer>{{MINUTE}}</integer>
+            <key>Weekday</key>
+            <integer>{{WEEKDAY}}</integer>
+        </dict>
+    </dict>
+</plist>
