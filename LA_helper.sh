@@ -14,10 +14,10 @@ brew_upgrade_launchagent="${HOME}/Library/LaunchAgents/LaunchAgent_brew-upgrade.
 
 # Create the LaunchAgent if it doesn't exist
 if [ ! -e "${brew_upgrade_launchagent}" ]; then
-    echo "Creating LaunchAgent '${brew_upgrade_launchagent}'"
 
     while [ "${this_hour}" = "" ]; do
         clear
+        echo "Creating LaunchAgent '${brew_upgrade_launchagent}'"
         echo "Valid hours of the day are 0 (midnight) to 23 (eleven PM)"
         read -p "Enter the hour of the day you would like to run 'brew_upgrade.sh' " this_hour
         this_hour=$(echo "${this_hour}" | sed -e 's|[^0-9]||g')
@@ -37,6 +37,7 @@ if [ ! -e "${brew_upgrade_launchagent}" ]; then
     
     while [ "${this_minute}" = "" ]; do
         clear
+        echo "Creating LaunchAgent '${brew_upgrade_launchagent}'"
         echo "Valid minutes of the day are 0 (on the hour) to 59 minutes past the hour"
         read -p "Enter the minute of the day you would like to run 'brew_upgrade.sh' " this_minute
         this_minute=$(echo "${this_minute}" | sed -e 's|[^0-9]||g')
@@ -56,6 +57,7 @@ if [ ! -e "${brew_upgrade_launchagent}" ]; then
     
     while [ "${this_weekday}" = "" ]; do
         clear
+        echo "Creating LaunchAgent '${brew_upgrade_launchagent}'"
         echo "Valid values for weekday are 0 (Sunday) through 6 (Saturday).  You can also use 7 for Sunday"
         read -p "Enter the day of the week you would like to run 'brew_upgrade.sh' " this_weekday
         this_weekday=$(echo "${this_weekday}" | sed -e 's|[^0-9]||g')
