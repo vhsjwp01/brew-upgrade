@@ -25,6 +25,10 @@ if [ ! -z "${this_USER}" ]; then
     export SUDO_ASKPASS="${this_HOME}/bin/askpass.sh"
     
     let count=0
+
+    echo 
+    echo "Running 'brew cleanup'" >> "${this_LOG}"
+    brew cleanup 2>&1              >> "${this_LOG}"
     
     while [ ${count} -lt 3 ]; do
         echo                                              >> "${this_LOG}"
