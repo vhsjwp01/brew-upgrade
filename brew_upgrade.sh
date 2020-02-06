@@ -28,7 +28,7 @@ if [ ! -z "${this_USER}" ]; then
 
     echo 
     echo "Running 'brew cleanup'" >> "${this_LOG}"
-    brew cleanup 2>&1              >> "${this_LOG}"
+    brew cleanup 2>&1             >> "${this_LOG}"
     
     while [ ${count} -lt 3 ]; do
         echo                                              >> "${this_LOG}"
