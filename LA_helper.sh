@@ -17,7 +17,10 @@ if [ ! -e "${HOME}/bin/askpass.sh" ]; then
     local_password=""
 
     while [ -z "${local_password}" ]; do
-        read -p "Please enter your password for this computer: " local_password
+        echo -ne "Please enter your password for this computer: "
+        stty -echo
+        read local_password
+        stty echo
     done
 
     local_password_base64=$(echo "${local_password}" | base64)
