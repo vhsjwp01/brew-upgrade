@@ -12,6 +12,21 @@ this_weekday=""
 
 brew_upgrade_launchagent="${HOME}/Library/LaunchAgents/LaunchAgent_brew-upgrade.plist"
 
+# Establish ~/bin/askpass.sh if it doesn't exist
+if [ ! -e "${HOME}/bin/askpass.sh" ]; then
+    local_password=""
+
+    while [ -z "${local_password}" ]; do
+        read -p "Please enter your password for this computer: " local_password
+    done
+
+    local_password_base64=$(echo "${local_password}" | base64)
+
+    cp askpass.sh "${HOME}/bin"
+    chmod 700 "${HOME}/bin/askpass.sh"
+    sed -i -e "s|^b64_pass=.*$|b64_pass=\"${local_password_base64}\"|g" "${HOME}/bin/askpass.sh"
+fi
+
 # Create the LaunchAgent if it doesn't exist
 if [ ! -e "${brew_upgrade_launchagent}" ]; then
 
