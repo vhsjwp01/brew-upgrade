@@ -28,6 +28,7 @@ if [ ! -e "${HOME}/bin/askpass.sh" ]; then
     cp askpass.sh "${HOME}/bin"
     chmod 700 "${HOME}/bin/askpass.sh"
     sed -i -e "s|^b64_pass=.*$|b64_pass=\"${local_password_base64}\"|g" "${HOME}/bin/askpass.sh"
+    echo
 fi
 
 # Create the LaunchAgent if it doesn't exist
