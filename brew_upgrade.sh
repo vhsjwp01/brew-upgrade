@@ -45,12 +45,12 @@ if [ ! -z "${this_USER}" ]; then
         brew upgrade --force 2>&1                         >> "${this_LOG}"
         let exit_code+=${?}
         echo                                              >> "${this_LOG}"
-        echo "Starting 'brew cask outdated'"              >> "${this_LOG}"
-        brew cask outdated 2>&1                           >> "${this_LOG}"
+        echo "Starting 'brew outdated --cask'"            >> "${this_LOG}"
+        brew outdated --cask 2>&1                         >> "${this_LOG}"
         let exit_code+=${?}
         echo                                              >> "${this_LOG}"
-        echo "Starting 'brew cask upgrade'"               >> "${this_LOG}"
-        brew cask upgrade --force  2>&1                   >> "${this_LOG}"
+        echo "Starting 'brew upgrade --cask'"             >> "${this_LOG}"
+        brew upgrade --cask --force  2>&1                 >> "${this_LOG}"
         let exit_code+=${?}
     
         if [ ${exit_code} -ne ${SUCCESS} ]; then
